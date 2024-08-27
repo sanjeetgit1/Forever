@@ -6,14 +6,16 @@ import ProductItem from "../components/ProductItem";
 
 
 const Collection = () => {
-  const { products } = useContext(ShopContext);
+  const { products,search, showSearch } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
+  const [sortType, setSortType]=useState('relavent');
 
   const toggleCategory = (e) => {
     if (category.includes(e.target.value)) {
+
       setCategory((prev) => prev.filter((item) => item !== e.target.value));
     } else {
       setCategory((prev) => [...prev, e.target.value]);
@@ -35,33 +37,58 @@ const Collection = () => {
    
     // Make a copy of the products array
     let productsCopy = products.slice();
+    
+    if(showSearch && search){
+      productsCopy= productsCopy.filter(item=> item.name.toLowerCase().includes(search.toLowerCase()))
+    }
   
     // Apply category filter if there are any selected categories
     if (category && category.length > 0) {
       productsCopy = productsCopy.filter((item) =>
-        category.includes(item.Category)
+        category.includes(item.category)
       );
     }
   
     // Apply subcategory filter if there are any selected subcategories
     if (subCategory && subCategory.length > 0) {
       productsCopy = productsCopy.filter((item) =>
-        subCategory.includes(item.SubCategory)
+        subCategory.includes(item.subCategory)
       );
     }
   
     // Update the filtered products state
     setFilterProducts(productsCopy);
   };
+
+ const sortProduct = ()=>{
+  let fpCopy =filterProducts.slice();
+
+  switch(sortType){
+    case 'low-high':
+      setFilterProducts(fpCopy.sort((a,b)=>(a.price - b.price)));
+      break;
+
+      case 'high-low':
+        setFilterProducts(fpCopy.sort((a,b)=>(b.price - a.price)));
+        break;
+
+        default:
+          applyFilter();
+          break;
+  }
+ }
   
-  useEffect(() => {
-    setFilterProducts(products);
-  }, []);
+  // useEffect(() => {
+  //   setFilterProducts(products);
+  // }, []);
 
   useEffect(() => {
     applyFilter();
-  }, [category, subCategory]);
+  }, [category, subCategory,search,showSearch]);
 
+  useEffect(()=>{
+    sortProduct();
+  },[sortType])
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 border-t pt-10">
       {/* filtter Options */}
@@ -161,7 +188,7 @@ const Collection = () => {
           <Title text1={"ALL "} text2={"COLLECTIONS"} />
 
           {/* product sort */}
-          <select className="border-2 border-gray-300 text-sm px-2">
+          <select onChange={(e)=>setSortType(e.target.value)} className="border-2 border-gray-300 text-sm px-2">
             <option value="relavent">Sort by:Relavent</option>
             <option value="low-high">Sort by:Low to High</option>
             <option value="high-low">Sort by:High to Low</option>
