@@ -63,7 +63,7 @@ const Product = () => {
             {currency}
             {productData.price}
           </p>
-          <p className="mt-5  text-gray-500 ">{productData.description}</p>
+          <p className="mt-5  text-gray-100 ">{productData.description}</p>
           <div className="flex flex-col gap-4 my-8">
             <p>Select Size</p>
             <div className="flex gap-2">
@@ -82,7 +82,7 @@ const Product = () => {
           </div>
           <button onClick={()=>addToCart(productData._id,size)} className=" bg-black text-white px-8 py-3 text-sm active:bg-gray-700"> ADD TO CART</button>
           <hr  className=" mt-8 sm:w-4/5"/>
-          <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
+          <div className="text-sm text-gray-100 mt-5 flex flex-col gap-1">
             <p>100% Original Product.</p>
             <p>Cash on delivery is avilable on this product.</p>
             <p>Easy return and exchange policy within 7 days.</p>
@@ -98,7 +98,7 @@ const Product = () => {
           <b className=" mr-5 border px-5 py-3 text-sm "> Description</b>
           <p className=" border px-5 py-3 text-sm"> Review (122)</p>
         </div>
-        <div className="flex mt-5 flex-col gap-4 border px-6 text-sm text-gray-500">
+        <div className="flex mt-5 flex-col gap-4 border px-6 text-sm text-gray-100">
           <p className="mb-5 mt-5"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus cum libero, optio fugiat voluptatibus aut error maiores velit vero architecto neque veritatis dolore nihil porro totam beatae officia commodi accusantium quia adipisci at excepturi, fugit eum impedit! Officiis veniam, quaerat delectus libero temporibus rem aut suscipit vel voluptate reprehenderit accusamus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, eligendi sint! Incidunt mollitia maiores ad cum similique non odit assumenda?</p>
           <p className=" mb-5" > Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat obcaecati placeat fugiat ipsum sunt tempora illo. Eligendi dignissimos accusantium aspernatur omnis nobis beatae, minus aut aliquid. Aperiam perspiciatis sint velit corporis sed ipsum! Sed doloribus dignissimos ducimus iure fugiat similique unde quaerat culpa. Voluptate nulla sunt possimus repellat harum ad officia, placeat magni, ipsam corporis distinctio dolore earum porro assumenda rem qui praesentium aliquid, consectetur quia alias debitis molestiae itaque error labore! Quo iusto eveniet sint? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos et error, dolor temporibus quas corporis voluptate corrupti suscipit magnam sit!</p>
 

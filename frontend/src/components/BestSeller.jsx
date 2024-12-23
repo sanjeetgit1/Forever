@@ -13,10 +13,10 @@ setBestSeller(bestProduct.slice(0,5))
 
     },[])
   return (
-    <div className=' my-10'>
+    <div className=' my-10 text-white bg-slate-900 p-10 rounded'>
         <div className='text-center text-3xl py-8'>
             <Title text1={'BEST'}  text2={'SELLERS'}/>
-            <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
+            <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-300'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum et perspiciatis molestias, ipsum nihil corrupti praesentium beatae vitae veniam? Incidunt. </p>
 
         </div>

@@ -7,7 +7,7 @@ const SearchBar = () => {
     useContext(ShopContext);
 
   return showSearch ? (
-    <div className=" border-t  border-b bg-gray-50 text-center">
+    <div className=" border-t  border-b bg-gray-100 text-center rounded-md mb-3">
       <div className=" inline-flex items-center justify-center border border-gray-400 px-3  my-5 mx-3 rounded-full w-3/4 sm:w-1/2 ">
         <input
           value={search}
@@ -20,7 +20,7 @@ const SearchBar = () => {
       </div>
       <img
         onClick={() => setShowSearch(false)}
-        className="inline w-3 cursor-pointer"
+        className="inline w-3 cursor-pointer "
         src={assets.cross_icon}
         alt=""
       />

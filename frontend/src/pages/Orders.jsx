@@ -6,7 +6,7 @@ const Orders = () => {
   const { products, currency } = useContext(ShopContext);
 
   return (
-    <div className="border-t pt-16">
+    <div className="border-t pt-16 bg-slate-900 p-20 ">
       <div className="text-2xl">
         <Title text1={"MY"} text2={"ORDERS"} />
       </div>
@@ -14,14 +14,14 @@ const Orders = () => {
         {products.slice(1, 4).map((item, index) => (
           <div
             key={index}
-            className=" flex py-4 border-t border-b text-gray-700 flex-col md:flex-row md:items-center md:justify-between gap-4"
+            className=" flex py-4 border-t border-b text-gray-200 flex-col md:flex-row md:items-center md:justify-between gap-4"
           >
             <div className="flex items-start gap-6 text-sm">
               <img className="w-16 sm:w-20" src={item.image[0]} alt="" />
 
               <div>
                 <p className="  sm:text-base font-medium"> {item.name}</p>
-                <div className="flex  items-center gap-3 mt-2 text-base text-gray-700">
+                <div className="flex  items-center gap-3 mt-2 text-base text-gray-200">
                   <p className="text-lg">
                     {" "}
                     {currency}
@@ -33,7 +33,7 @@ const Orders = () => {
                   
                     <p className="mt-2">
                       {" "}
-                      Date: <span className="text-gray-400">30 july 2024</span>
+                      Date: <span className="text-gray-100">30 july 2024</span>
                     </p>
                  </div>
           </div>

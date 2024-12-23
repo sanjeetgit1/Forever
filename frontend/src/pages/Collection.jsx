@@ -90,12 +90,12 @@ const Collection = () => {
     sortProduct();
   },[sortType])
   return (
-    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 border-t pt-10">
+    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 border-t p-10 bg-slate-900 ">
       {/* filtter Options */}
       <div className="min-w-60">
         <p
           onClick={() => setShowFilter(!showFilter)}
-          className=" my-2  text-xl flex items-center cursor-pointer gap-2"
+          className=" my-2  text-xl  text-white flex items-center cursor-pointer gap-2"
         >
           FILTERS
           <img
@@ -107,12 +107,12 @@ const Collection = () => {
 
         {/* Category Filter */}
         <div
-          className={`border border-gray-400 pl-5 py-3 mt-6 ${
+          className={`border  border-gray-400 pl-5 py-3 mt-6 ${
             showFilter ? " " : "hidden"
           } sm:block`}
         >
-          <p className="mb-3 text-sm font-medium"> CATEGORIES</p>
-          <div className="flex flex-col  gap-2 text-sm  font-light text-gray-700">
+          <p className="mb-3 text-sm text-white font-medium"> CATEGORIES</p>
+          <div className="flex flex-col text-white  gap-2 text-sm  font-light text-gray-700">
             <p className="flex gap-2">
               <input
                 className="w-3"
@@ -148,8 +148,8 @@ const Collection = () => {
             showFilter ? " " : "hidden"
           } sm:block`}
         >
-          <p className="mb-3 text-sm font-medium"> TYPE</p>
-          <div className="flex flex-col  gap-2 text-sm  font-light text-gray-700">
+          <p className="mb-3 text-white text-sm font-medium"> TYPE</p>
+          <div className="flex text-white flex-col  gap-2 text-sm  font-light text-gray-700">
             <p className="flex gap-2">
               <input
                 className="w-3"

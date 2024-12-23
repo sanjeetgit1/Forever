@@ -10,9 +10,9 @@ const Navbar = () => {
     const {setShowSearch ,getCartCount}=useContext(ShopContext);
   return (
     <div className="flex items-center justify-between py-5 font-medium">
-     <Link to='/'> <img src={assets.logo} className="w-36" alt="" /></Link>
+     <Link to='/'> <img src={assets.logo} className="w-64 mt-4" alt="" /></Link>
 
-      <ul className="hidden sm:flex gap-5 text-sm text-gray-700 ">
+      <ul className="hidden sm:flex gap-5 text-sm text-gray-300 ">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p>HOME</p>
           <hr className="w-3/4 border-none h-[1.5px] bg-gray-700 hidden" />
@@ -31,7 +31,7 @@ const Navbar = () => {
         </NavLink>
       </ul>
 
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-6 ">
         <img onClick={()=>setShowSearch(true)} src={assets.search_icon} className="w-5 cursor-pointer" alt="" />
 
         <div className="group relative">

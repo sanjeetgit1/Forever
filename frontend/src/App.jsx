@@ -19,7 +19,7 @@ import Profile from './pages/Profile'
 
 const App = () => {
   return (
-    <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
+    <div className='px-4 sm:px-[5vw] md:px-[vw] lg:px-[vw]   bg-[#000000]'>
 <ToastContainer/>
 <Navbar/>
 <SearchBar/>
