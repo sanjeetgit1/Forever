@@ -4,6 +4,7 @@ import { assets } from "../assets/assets";
 import NewsletterBox from "../components/NewsletterBox";
 
 const About = () => {
+  
   return (
     <div className=" text-gray-200">
       <div className="text-2xl text-center pt-8 border-t">
